@@ -21,8 +21,8 @@ public:
 	void setCurrentSlide(int number);
 	const int& getSlideCount() const;
 	void setSlideCount(int count);
+    void setCommands();
 	
-	//
 	void start() const;
 
 private:

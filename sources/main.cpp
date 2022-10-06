@@ -6,13 +6,12 @@ int main(int argc, char *argv[]) try
 	(void) argc;
 	(void) argv;
 
-	Engine engine; 
+	Engine engine;
+    engine.setCommands(); 
     engine.addSlide(); 
 	engine.start();
 
 	//cout << "sdfsfsf\n";
-	while (1)
-	   ;
 
 	return 0;
 }

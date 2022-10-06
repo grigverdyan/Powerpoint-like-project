@@ -5,6 +5,13 @@ Engine::Engine() {};
 
 Engine::~Engine() {};
 
+
+void Engine::setCommands()
+{
+    commands.push_back("add slide");
+    commands.push_back("remove slide");
+}
+
 const int& Engine::getCurrentSlide() const
 {
 	return currentSlide;
@@ -37,9 +44,8 @@ void Engine::addSlide(int count)
 
 void Engine::start() const
 {
-    
+   
 	system("clear");
-
     cout << "Slides count: " << getSlideCount() << endl;
 	
 	gotoxy(leftUpCornerY, leftUpCornerX);
@@ -76,14 +82,25 @@ void Engine::start() const
         cout << "#";
     }
     cout << endl;
-
-	gotoxy(leftUpCornerX, leftUpCornerY + verticalBorderSize + 2);
-	cout << GREEN <<  "Powerpoint command prompt" << RESET << ":~$ ";
-	string command;
-	cin >> command;
+    
+	string command = "";
+    while (command != "exit"){
+         
+	    gotoxy(leftUpCornerX, leftUpCornerY + verticalBorderSize + 2);        
+	    cout << GREEN <<  "Powerpoint command prompt" << RESET << ":~$ ";
+	    cin >> command;
+        if (command == "help")
+        {
+            cout<<endl;
+            gotoxy(leftUpCornerX, leftUpCornerY + verticalBorderSize + 2);
+            cout<<"You can type one of this commands:\n";
+            for (size_t i = 0; i < commands.size(); ++i)
+            {
+                
+	            gotoxy(leftUpCornerX, leftUpCornerY + verticalBorderSize + 3);
+                std::cout<<commands.at(i) << endl;
+            }
+        }
+    }
 }
 
-//void addSlide(int count = 1);	
-//void deleteLastSlide();
-//void deleteSlide(int number);	
-//void setCurrentSlide(int toSlide);
