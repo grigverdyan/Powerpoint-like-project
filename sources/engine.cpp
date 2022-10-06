@@ -5,7 +5,6 @@ Engine::Engine() {};
 
 Engine::~Engine() {};
 
-
 const int& Engine::getCurrentSlide() const
 {
 	return currentSlide;
@@ -30,48 +29,58 @@ void Engine::setSlideCount(int count)
 	slideCount = count;
 }
 
-void addSlide(int count = 1){
+void Engine::addSlide(int count)
+{
     setSlideCount(getSlideCount() + count);
+
 }
 
 void Engine::start() const
 {
     
 	system("clear");
-    cout<<"Now we have " << getSlideCount() <<" slides\n";
-	gotoxy(5, 5);
-    for (size_t i = 0 ; i < 30; ++i){
-        gotoxy(5, 5+i);
+
+    cout << "Slides count: " << getSlideCount() << endl;
+	
+	gotoxy(leftUpCornerY, leftUpCornerX);
+    for (size_t i = 0 ; i < verticalBorderSize; ++i)
+	{
+        gotoxy(leftUpCornerX, leftUpCornerY + i);
         cout << "#";
     }
 
-    for (size_t i = 0 ; i < 120 ; ++i){
-        gotoxy(5+i,5);
+    for (size_t i = 0 ; i < horizontalBorderSize ; ++i)
+	{
+        gotoxy(leftUpCornerX + i, leftUpCornerY);
         cout << "#";
     }
-
-    gotoxy(125,5);    
-    for(size_t i = 0; i < 30; ++i) {
-        gotoxy(125,5 + i);
-        cout<<"#";
+	
+    gotoxy(horizontalBorderSize, leftUpCornerY);
+    for(size_t i = 0; i < verticalBorderSize; ++i)
+	{
+        gotoxy(horizontalBorderSize + leftUpCornerX, leftUpCornerY + i);
+        cout << "#";
     }
     
-    gotoxy(5,35);
-    for (size_t i = 0; i < 125; ++i) {
-        gotoxy(35, 5 + i);
-        cout<<"#";
-        
+    gotoxy(leftUpCornerY, leftUpCornerY + commandsWindowY);
+    for (size_t i = 0; i < verticalBorderSize; ++i)
+	{
+        gotoxy(leftUpCornerY + commandsWindowY, leftUpCornerY + i);
+        cout << "#";
     } 
     
-    gotoxy(5,35);
-    for (size_t i = 0; i < 121; ++i) {
-        gotoxy(5 + i, 35);
-        cout<<"#";
+    gotoxy(leftUpCornerX, verticalBorderSize + leftUpCornerY);
+    for (size_t i = 0; i < horizontalBorderSize + 1; ++i)
+	{
+        gotoxy(leftUpCornerX + i, verticalBorderSize + leftUpCornerY);
+        cout << "#";
     }
-    cout<<"\n";
+    cout << endl;
 
-
-	//cout << "Powerpoint command prompt:~$ ";
+	gotoxy(leftUpCornerX, leftUpCornerY + verticalBorderSize + 2);
+	cout << GREEN <<  "Powerpoint command prompt" << RESET << ":~$ ";
+	string command;
+	cin >> command;
 }
 
 //void addSlide(int count = 1);	

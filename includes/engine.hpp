@@ -1,6 +1,8 @@
 #pragma once
 
 #include "header.hpp"
+#include "window.hpp"
+#include "colors.hpp"
 
 class Engine
 {

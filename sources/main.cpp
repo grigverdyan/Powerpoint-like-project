@@ -8,7 +8,6 @@ int main(int argc, char *argv[]) try
 
 	Engine engine; 
     engine.addSlide(); 
-    //std::cout<<"Now we have " << engine.getSlideCount() << " slides\n";
 	engine.start();
 
 	//cout << "sdfsfsf\n";

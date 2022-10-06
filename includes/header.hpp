@@ -13,6 +13,7 @@
 using std::cout;
 using std::cerr;
 using std::endl;
+using std::cin;
 using std::string;
 using std::stringstream;
 using std::map;
