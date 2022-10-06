@@ -6,10 +6,12 @@ int main(int argc, char *argv[]) try
 	(void) argc;
 	(void) argv;
 
-	Engine engine;
-	//engine.start();
+	Engine engine; 
+    engine.addSlide(); 
+    //std::cout<<"Now we have " << engine.getSlideCount() << " slides\n";
+	engine.start();
 
-	cout << "sdfsfsf\n";
+	//cout << "sdfsfsf\n";
 	while (1)
 	   ;
 
