@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Engine	engine.cpp	/^Engine::Engine() {};$/;"	f	class:Engine
+ErrorMessage	error_message.cpp	/^ErrorMessage::ErrorMessage()$/;"	f	class:ErrorMessage
+ErrorMessage	error_message.cpp	/^ErrorMessage::ErrorMessage(string errorMessage)$/;"	f	class:ErrorMessage
+getCurrentSlide	engine.cpp	/^const int& Engine::getCurrentSlide() const$/;"	f	class:Engine
+getSlideCount	engine.cpp	/^const int& Engine::getSlideCount() const$/;"	f	class:Engine
+gotoxy	utils.cpp	/^void gotoxy(const int x, const int y)$/;"	f
+main	main.cpp	/^int main(int argc, char *argv[]) try$/;"	f
+printError	error_message.cpp	/^void ErrorMessage::printError() $/;"	f	class:ErrorMessage
+setCurrentSlide	engine.cpp	/^void Engine::setCurrentSlide(int number)$/;"	f	class:Engine
+setSlideCount	engine.cpp	/^void Engine::setSlideCount(int count)$/;"	f	class:Engine
+start	engine.cpp	/^void Engine::start() const$/;"	f	class:Engine
+~Engine	engine.cpp	/^Engine::~Engine() {};$/;"	f	class:Engine

@@ -128,6 +128,7 @@ class Slide : public Engine {
 };
 
 int main(){
+	Engine *engine = new Engine();
     return 0;
 }
 
