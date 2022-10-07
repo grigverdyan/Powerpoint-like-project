@@ -6,6 +6,7 @@ Engine::Engine() {};
 Engine::~Engine() {};
 
 
+
 void Engine::setCommands()
 {
     commands.push_back("add slide");
@@ -19,7 +20,7 @@ const int& Engine::getCurrentSlide() const
 
 void Engine::setCurrentSlide(int number)
 {
-	if (number < 1)
+	if (number < 1 || number > getSlideCount())
 		return;
 	currentSlide = number;
 }
@@ -40,6 +41,13 @@ void Engine::addSlide(int count)
 {
     setSlideCount(getSlideCount() + count);
 
+}
+
+void Engine::deleteLastSlide()
+{   
+    if (getSlideCount() == 0)
+        return;
+    setSlideCount(getSlideCount() - 1);
 }
 
 void Engine::start() const
@@ -100,7 +108,7 @@ void Engine::start() const
 	            gotoxy(leftUpCornerX, leftUpCornerY + verticalBorderSize + 3);
                 std::cout<<commands.at(i) << endl;
             }
-        }
+        } 
     }
 }
 
