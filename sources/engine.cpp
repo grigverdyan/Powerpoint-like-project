@@ -94,9 +94,10 @@ void Engine::start() const
     gotoxy(leftUpCornerX + 1, leftUpCornerY + 1);
     for (size_t i = 0; i < commands.size(); ++i)
     {
-	gotoxy(leftUpCornerX + 1, leftUpCornerY + 1 + i);
-	cout<<commands.at(i)<<"\n";
+	    gotoxy(leftUpCornerX + 1, leftUpCornerY + 1 + i);
+	    cout << commands.at(i) << endl;
     }
+
 	string command = "";
     while (command != "exit"){
          
