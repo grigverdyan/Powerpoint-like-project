@@ -17,10 +17,15 @@ public:
 
 private slots:
     void on_actionNew_triggered();
-
     void on_actionRectangle_triggered();
+    void on_toolButton_next_clicked();
+
+    void on_toolButton_prev_clicked();
+
+    void on_firstSlide_clicked();
 
 private:
     Ui::MainWindow *ui;
+    int m_current_slide = 0;
 };
 #endif // MAINWINDOW_H
