@@ -1,0 +1,10 @@
+USAGE: add slide: (adds one slide if no flag is given)
+    -q <int slidesCount> //add slide -q 5 (how many slides you want to add)
+USAGE: add rectangle:
+    -coords <int coordinate_X1> <int coordinate_Y1> <int coordinate_X2> <int coordinate_Y2> //add rectangle -coords 0 0 100 200
+USAGE: add text:
+    -startingPoint <int X> <int Y>
+USAGE: next slide: (goes to next slide if exists)
+USAGE: prev slide: (goes back to previous slide if current slide is not first one)
+USAGE: last slide: (goes to last slide)
+USAGE: first slide: (goes to first slide)
