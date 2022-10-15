@@ -12,6 +12,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(1000,600);
     ui->stackedWidget->setCurrentIndex(0);
+
+    QPushButton *button = new QPushButton("1");
+    lay->addWidget(button);
+    ui->scrollAreaWidgetContents->setLayout(lay);
+    connect(button, &QPushButton::clicked, [=]() {
+                qDebug() << "button " << button->text() << " clicked";
+            });
 }
 
 MainWindow::~MainWindow()
@@ -21,7 +28,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionNew_triggered()
 {
-
+    QPushButton *button = new QPushButton(QString::number(ui->stackedWidget->count()));
+    lay->addWidget(button);
+    ui->scrollAreaWidgetContents->setLayout(lay);
+    connect(button, &QPushButton::clicked, [=]() {
+                qDebug() << "button " << button->text() << " clicked";
+            });
 }
 
 void MainWindow::on_actionRectangle_triggered()
@@ -36,12 +48,6 @@ void MainWindow::on_actionRectangle_triggered()
 
     painter.setPen(pen);
     painter.drawRect(QRect(80,120,200,100));
-}
-
-void MainWindow::on_firstSlide_clicked()
-{
-    m_current_slide = 0;
-    ui->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_toolButton_next_clicked()
