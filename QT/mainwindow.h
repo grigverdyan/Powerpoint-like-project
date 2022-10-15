@@ -23,10 +23,12 @@ private slots:
     void on_toolButton_next_clicked();
     void on_toolButton_prev_clicked();
 
+    void button_clicked(QPushButton*);
+
 private:
     Ui::MainWindow *ui;
     int m_current_slide = 0;
-    int temp = 0;
+    int temp = 1;
     QVBoxLayout *lay = new QVBoxLayout(this);
 };
 #endif // MAINWINDOW_H
