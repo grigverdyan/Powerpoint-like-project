@@ -28,7 +28,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     int m_current_slide = 0;
-    int temp = 1;
     QVBoxLayout *lay = new QVBoxLayout(this);
 };
 #endif // MAINWINDOW_H

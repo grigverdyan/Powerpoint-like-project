@@ -28,21 +28,24 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionNew_triggered()
 {
-    QPushButton *button = new QPushButton(QString::number(++temp));
-    //QPushButton *button = new QPushButton(QString::number(ui->stackedWidget->count()));
+    QPushButton *button = new QPushButton(QString::number(ui->stackedWidget->count() + 1));
     button->setSizeIncrement(130,100);
     button->setMinimumSize(130, 100);
     lay->addWidget(button);
     ui->scrollAreaWidgetContents->setLayout(lay);
 
     connect(button, &QPushButton::clicked, this, std::bind(&MainWindow::button_clicked, this, button));
-    //stackwidget add new page
+    QWidget *new_page = new QWidget;
+    QLabel *name = new QLabel(new_page);
+    name->setText("page " + QString::number(ui->stackedWidget->count() + 1));
+    ui->stackedWidget->addWidget(new_page);
 }
 
 void MainWindow::button_clicked(QPushButton *button)
 {
-    qDebug() << "button " << button->text() << " clicked";
+    //qDebug() << "button " << button->text() << " clicked";
     ui->stackedWidget->setCurrentIndex(button->text().toInt() - 1);
+    m_current_slide = button->text().toInt() - 1;
 }
 
 void MainWindow::on_toolButton_next_clicked()
@@ -70,10 +73,5 @@ void MainWindow::on_actionRectangle_triggered()
     painter.setPen(pen);
     painter.drawRect(QRect(80,120,200,100));
 }
-
-
-/*connect(button, &QPushButton::clicked, [=]() {
-            qDebug() << "button " << button->text() << " clicked";
-        });*/
 
 
