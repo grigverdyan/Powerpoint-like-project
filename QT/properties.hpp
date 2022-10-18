@@ -19,4 +19,10 @@ enum LeftSlidesButtonsProperties
     slideHeight = 100
 };
 
+struct Point
+{
+    int x = 0;
+    int y = 0;
+};
+
 #endif // PROPERTIES_HPP

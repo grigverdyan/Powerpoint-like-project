@@ -1,8 +1,8 @@
 #ifndef SLIDE_HPP
 #define SLIDE_HPP
 
-#include <vector>
-#include <iterator>
+#include <QVector>
+#include <QIterator>
 
 //#include "shape.hpp"
 
@@ -13,7 +13,7 @@ public:
     virtual ~Slide();
 
 private:
-    std::vector<int *> m_shapesVector;
+    QVector<int *> m_shapesVector;
     int m_shapesCount;
 };
 
