@@ -11,15 +11,17 @@ class Shape
 {
 public:
     virtual ~Shape();
-    virtual std::vector<Point *>& getPoints() = 0;
+    virtual QVector<Point *>& getPoints() = 0;
 
 protected:
     Shape();
 
 protected:
+    QString type;
     QString color;
     QVector<Point *> m_pointsVector;
     int m_pointsCount;
+    int id;
 };
 
 #endif // SHAPE_HPP

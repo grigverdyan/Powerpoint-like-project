@@ -4,7 +4,7 @@
 #include <QVector>
 #include <QIterator>
 
-//#include "shape.hpp"
+#include "shape.hpp"
 
 class Slide
 {
@@ -13,7 +13,7 @@ public:
     virtual ~Slide();
 
 private:
-    QVector<int *> m_shapesVector;
+    QVector<Shape *> m_shapesVector;
     int m_shapesCount;
 };
 

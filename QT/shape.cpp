@@ -2,8 +2,11 @@
 
 Shape::Shape()
 {
+    type = "empty";
+    color = "empty";
     m_pointsVector.push_back(nullptr);
     m_pointsCount = 0;
+    id  = 0;
 }
 
 Shape::~Shape()
