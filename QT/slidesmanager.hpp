@@ -1,8 +1,8 @@
 #ifndef SLIDESMANAGER_HPP
 #define SLIDESMANAGER_HPP
 
-#include <QVector>
-#include <QIterator>
+#include <vector>
+#include <iterator>
 
 #include "slide.hpp"
 
@@ -16,7 +16,7 @@ public:
     void addSlideInSlideManager();
 
 private:
-    QVector<Slide *> m_slidesVector;
+    std::vector<Slide *> m_slidesVector;
     int m_slidesCount;
 };
 

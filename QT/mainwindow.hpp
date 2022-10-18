@@ -7,8 +7,8 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QDebug>
-#include <QVector>
-#include <QIterator>
+#include <vector>
+#include <iterator>
 
 #include "slidesmanager.hpp"
 
@@ -41,7 +41,7 @@ private:
     // Main Window attributes
     Ui::MainWindow *ui;
     QVBoxLayout *m_scrollLayout;
-    QVector<QPushButton *> m_slidesButtons;
+    std::vector<QPushButton *> m_slidesButtons;
     int m_slidesButtonsCount;
 
     // Slides managment attributes
