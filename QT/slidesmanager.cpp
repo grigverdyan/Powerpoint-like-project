@@ -11,3 +11,9 @@ SlidesManager::~SlidesManager()
     for (auto it = m_slidesVector.begin(); it != m_slidesVector.end(); ++it)
         delete *it;
 }
+
+void SlidesManager::addSlideInSlideManager()
+{
+    m_slidesVector.push_back(new Slide());
+    ++m_slidesCount;
+}

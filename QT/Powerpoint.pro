@@ -11,11 +11,13 @@ CONFIG += c++17 -Iheaders
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    slide.cpp \
     slidesmanager.cpp
 
 HEADERS += \
     mainwindow.hpp \
     properties.hpp \
+    slide.hpp \
     slidesmanager.hpp
 
 FORMS += \

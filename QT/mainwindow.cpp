@@ -42,9 +42,7 @@ void MainWindow::addSlide(const QString& slideNumber)
     ++m_slidesButtonsCount;
     setButtonSize(m_slidesButtons[m_slidesButtonsCount], slideWidth, slideHeight);
     connect(m_slidesButtons[m_slidesButtonsCount], &QPushButton::clicked, this, std::bind(&MainWindow::slide_button_clicked, this, m_slidesButtons[m_slidesButtonsCount]));
-
-    //           Implement later
-    //m_slidesManager->addSlideInManager();
+    m_slidesManager->addSlideInSlideManager();
 }
 
 void MainWindow::setButtonSize(QPushButton *button, int width, int height)
