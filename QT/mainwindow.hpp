@@ -30,7 +30,7 @@ private slots:
     void on_actionRectangle_triggered();
     void on_toolButton_next_clicked();
     void on_toolButton_prev_clicked();
-    void button_clicked(QPushButton*);
+    void slide_button_clicked(QPushButton*);
 
     // Member functions
     void setup();
@@ -46,6 +46,7 @@ private:
 
     // Slides managment attributes
     SlidesManager *m_slidesManager;
+    int m_currentSlide;
 };
 
 #endif // MAINWINDOW_HPP
