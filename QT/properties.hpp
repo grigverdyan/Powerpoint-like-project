@@ -13,4 +13,10 @@ enum SlideProperties
     slideSizeVerticale = 400
 };
 
+enum LeftSlidesButtonsProperties
+{
+    slideWidth = 130,
+    slideHeight = 100
+};
+
 #endif // PROPERTIES_HPP

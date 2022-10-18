@@ -13,30 +13,47 @@ MainWindow::MainWindow(QWidget *parent)
     setup();
     ui->stackedWidget->setCurrentIndex(0);
 
-
-
-
-
-
-
-    QPushButton *button = new QPushButton("1");
-    button->setSizeIncrement(130,100);
-    button->setMinimumSize(130, 100);
-    lay->addWidget(button);
-    ui->scrollAreaWidgetContents->setLayout(lay);
-    connect(button, &QPushButton::clicked, this, std::bind(&MainWindow::button_clicked, this, button));
+    // Make first slide
+    addSlide("1");
+    setButtonSize(m_slidesButtons[1], slideWidth, slideHeight);
+    m_scrollLayout->addWidget(m_slidesButtons[1]);
+    ui->scrollAreaWidgetContents->setLayout(m_scrollLayout);
+    connect(m_slidesButtons[1], &QPushButton::clicked, this, std::bind(&MainWindow::button_clicked, this, m_slidesButtons[1]));
 }
 
 MainWindow::~MainWindow()
 {
+    for (auto it = m_slidesButtons.begin(); it != m_slidesButtons.end(); ++it)
+        delete *it;
+
     delete ui;
 }
 
 void MainWindow::setup()
 {
-    scroolLayout = new QVBoxLayout(this);
-
+    m_scrollLayout = new QVBoxLayout(this);
+    m_slidesButtons.push_back(nullptr);
 }
+
+void MainWindow::addSlide(const QString& slideNumber)
+{
+    m_slidesButtons.push_back(new QPushButton(slideNumber));
+    m_slidesManager->addSlideInManager();
+}
+
+void MainWindow::setButtonSize(QPushButton *button, int width, int height)
+{
+    button->setSizeIncrement(width, height);
+    button->setMinimumSize(width, height);
+}
+
+
+
+
+
+
+
+
 
 void MainWindow::on_actionNew_triggered()
 {

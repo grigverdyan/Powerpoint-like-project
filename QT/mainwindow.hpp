@@ -34,12 +34,14 @@ private slots:
 
     // Member functions
     void setup();
+    void addSlide(const QString&);
+    void setButtonSize(QPushButton *button, int width, int height);
 
 private:
     // Main Window attributes
     Ui::MainWindow *ui;
-    QVBoxLayout *m_scroolLayout;
-
+    QVBoxLayout *m_scrollLayout;
+    std::vector<QPushButton *> m_slidesButtons;
 
     // Slides managment attributes
     SlidesManager *m_slidesManager;
