@@ -1,17 +1,23 @@
-#include "mainwindow.h"
+#include "mainwindow.hpp"
+#include "properties.hpp"
 #include "ui_mainwindow.h"
-#include <QPainter>
-#include <QPaintEvent>
-
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    // set main window size
     ui->setupUi(this);
-    this->setFixedSize(1000,600);
+    this->setFixedSize(windowSizeHorizontal, windowSizeVerticale);
+
+    setup();
     ui->stackedWidget->setCurrentIndex(0);
+
+
+
+
+
+
 
     QPushButton *button = new QPushButton("1");
     button->setSizeIncrement(130,100);
@@ -24,6 +30,12 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setup()
+{
+    scroolLayout = new QVBoxLayout(this);
+
 }
 
 void MainWindow::on_actionNew_triggered()

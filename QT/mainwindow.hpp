@@ -1,9 +1,16 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MAINWINDOW_HPP
+#define MAINWINDOW_HPP
 
 #include <QMainWindow>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QDebug>
+#include <vector>
+#include <iterator>
+
+#include "slidesmanager.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,19 +22,27 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    virtual ~MainWindow();
 
 private slots:
+    // Main Window actions
     void on_actionNew_triggered();
     void on_actionRectangle_triggered();
     void on_toolButton_next_clicked();
     void on_toolButton_prev_clicked();
-
     void button_clicked(QPushButton*);
 
+    // Member functions
+    void setup();
+
 private:
+    // Main Window attributes
     Ui::MainWindow *ui;
-    int m_current_slide = 0;
-    QVBoxLayout *lay = new QVBoxLayout(this);
+    QVBoxLayout *m_scroolLayout;
+
+
+    // Slides managment attributes
+    SlidesManager *m_slidesManager;
 };
-#endif // MAINWINDOW_H
+
+#endif // MAINWINDOW_HPP
