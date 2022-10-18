@@ -27,7 +27,7 @@
      <string>Console</string>
     </property>
    </widget>
-   <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QStackedWidget" name="slidesStackedWidget">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -149,7 +149,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>17</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

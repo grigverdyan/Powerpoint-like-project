@@ -42,6 +42,7 @@ private:
     Ui::MainWindow *ui;
     QVBoxLayout *m_scrollLayout;
     std::vector<QPushButton *> m_slidesButtons;
+    int m_slidesButtonsCount;
 
     // Slides managment attributes
     SlidesManager *m_slidesManager;
