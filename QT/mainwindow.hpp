@@ -40,13 +40,13 @@ private slots:
 private:
     // Main Window attributes
     Ui::MainWindow *ui;
-    QVBoxLayout *m_scrollLayout;
-    QVector<QPushButton *> m_slidesButtons;
-    int m_slidesButtonsCount;
+    QVBoxLayout *_scrollLayout;
+    QVector<QPushButton *> _slidesButtons;
+    int _slidesButtonsCount;
 
     // Slides managment attributes
-    SlidesManager *m_slidesManager;
-    int m_currentSlide;
+    SlidesManager *_slidesManager;
+    int _currentSlide;
 };
 
 #endif // MAINWINDOW_HPP

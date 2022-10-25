@@ -2,16 +2,16 @@
 
 Triangle::Triangle()
 {
-    type = "triangle";
+    _type = "triangle";
 }
 
 Triangle::~Triangle()
 {
-    for (auto it = m_pointsVector.begin(); it != m_pointsVector.end(); ++it)
+    for (auto it = _pointsVector.begin(); it != _pointsVector.end(); ++it)
         delete *it;
 }
 
 QVector<Point *>& Triangle::getPoints()
 {
-    return m_pointsVector;
+    return _pointsVector;
 }

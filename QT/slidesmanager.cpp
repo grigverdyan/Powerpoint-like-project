@@ -2,18 +2,18 @@
 
 SlidesManager::SlidesManager()
 {
-    m_slidesVector.push_back(nullptr);
-    m_slidesCount = 0;
+    _slidesVector.push_back(nullptr);
+    _slidesCount = 0;
 }
 
 SlidesManager::~SlidesManager()
 {
-    for (auto it = m_slidesVector.begin(); it != m_slidesVector.end(); ++it)
+    for (auto it = _slidesVector.begin(); it != _slidesVector.end(); ++it)
         delete *it;
 }
 
 void SlidesManager::addSlideInSlideManager()
 {
-    m_slidesVector.push_back(new Slide());
-    ++m_slidesCount;
+    _slidesVector.push_back(new Slide());
+    ++_slidesCount;
 }

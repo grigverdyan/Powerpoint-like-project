@@ -17,11 +17,11 @@ protected:
     Shape();
 
 protected:
-    QString type;
-    QString color;
-    QVector<Point *> m_pointsVector;
-    int m_pointsCount;
-    int id;
+    QString _type;
+    QString _color;
+    QVector<Point *> _pointsVector;
+    int _pointsCount;
+    int _id;
 };
 
 #endif // SHAPE_HPP

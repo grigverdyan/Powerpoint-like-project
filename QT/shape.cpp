@@ -2,15 +2,15 @@
 
 Shape::Shape()
 {
-    type = "empty";
-    color = "empty";
-    m_pointsVector.push_back(nullptr);
-    m_pointsCount = 0;
-    id  = 0;
+    _type = "empty";
+    _color = "empty";
+    _pointsVector.push_back(nullptr);
+    _pointsCount = 0;
+    _id  = 0;
 }
 
 Shape::~Shape()
 {
-    for (auto it = m_pointsVector.begin(); it != m_pointsVector.end(); ++it)
+    for (auto it = _pointsVector.begin(); it != _pointsVector.end(); ++it)
         delete *it;
 }

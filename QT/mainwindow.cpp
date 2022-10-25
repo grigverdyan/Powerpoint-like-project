@@ -15,14 +15,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Make first slide
     addSlide("1");
-    m_scrollLayout->addWidget(m_slidesButtons[1]);
-    ui->scrollAreaWidgetContents->setLayout(m_scrollLayout);
-    connect(m_slidesButtons[1], &QPushButton::clicked, this, std::bind(&MainWindow::slide_button_clicked, this, m_slidesButtons[1]));
+    _scrollLayout->addWidget(_slidesButtons[1]);
+    ui->scrollAreaWidgetContents->setLayout(_scrollLayout);
+    connect(_slidesButtons[1], &QPushButton::clicked, this, std::bind(&MainWindow::slide_button_clicked, this, _slidesButtons[1]));
 }
 
 MainWindow::~MainWindow()
 {
-    for (auto it = m_slidesButtons.begin(); it != m_slidesButtons.end(); ++it)
+    for (auto it = _slidesButtons.begin(); it != _slidesButtons.end(); ++it)
         delete *it;
 
     delete ui;
@@ -30,19 +30,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::setup()
 {
-    m_scrollLayout = new QVBoxLayout(this);
-    m_slidesButtons.push_back(nullptr);
-    m_slidesButtonsCount = 0;
-    m_currentSlide = 0;
+    _scrollLayout = new QVBoxLayout(this);
+    _slidesButtons.push_back(nullptr);
+    _slidesButtonsCount = 0;
+    _currentSlide = 0;
 }
 
 void MainWindow::addSlide(const QString& slideNumber)
 {
-    m_slidesButtons.push_back(new QPushButton(slideNumber));
-    ++m_slidesButtonsCount;
-    setButtonSize(m_slidesButtons[m_slidesButtonsCount], slideWidth, slideHeight);
-    connect(m_slidesButtons[m_slidesButtonsCount], &QPushButton::clicked, this, std::bind(&MainWindow::slide_button_clicked, this, m_slidesButtons[m_slidesButtonsCount]));
-    m_slidesManager->addSlideInSlideManager();
+    _slidesButtons.push_back(new QPushButton(slideNumber));
+    ++_slidesButtonsCount;
+    setButtonSize(_slidesButtons[_slidesButtonsCount], slideWidth, slideHeight);
+    connect(_slidesButtons[_slidesButtonsCount], &QPushButton::clicked, this, std::bind(&MainWindow::slide_button_clicked, this, _slidesButtons[_slidesButtonsCount]));
+    _slidesManager->addSlideInSlideManager();
 }
 
 void MainWindow::setButtonSize(QPushButton *button, int width, int height)
@@ -54,35 +54,35 @@ void MainWindow::setButtonSize(QPushButton *button, int width, int height)
 void MainWindow::on_actionNew_triggered()
 {
     // make new slide
-    addSlide(QString::number(m_slidesButtonsCount + 1));
+    addSlide(QString::number(_slidesButtonsCount + 1));
 
     // update scroll bar
-    m_scrollLayout->addWidget(m_slidesButtons[m_slidesButtonsCount]);
-    ui->scrollAreaWidgetContents->setLayout(m_scrollLayout);
-    connect(m_slidesButtons[m_slidesButtonsCount], &QPushButton::clicked, this, std::bind(&MainWindow::slide_button_clicked, this, m_slidesButtons[m_slidesButtonsCount]));
+    _scrollLayout->addWidget(_slidesButtons[_slidesButtonsCount]);
+    ui->scrollAreaWidgetContents->setLayout(_scrollLayout);
+    connect(_slidesButtons[_slidesButtonsCount], &QPushButton::clicked, this, std::bind(&MainWindow::slide_button_clicked, this, _slidesButtons[_slidesButtonsCount]));
 
     // add new slide to stacked widget
     //      Implement later
     //ui->slidesStackedWidget->addWidget(m_slidesManager.getSlidesVector()[m_slidesButtonsCount].getWidget());
-    m_currentSlide = m_slidesButtonsCount;
+    _currentSlide = _slidesButtonsCount;
 }
 
 void MainWindow::slide_button_clicked(QPushButton *button)
 {
     ui->slidesStackedWidget->setCurrentIndex(button->text().toInt() - 1);
-    m_currentSlide = button->text().toInt();
+    _currentSlide = button->text().toInt();
 }
 
 void MainWindow::on_toolButton_next_clicked()
 {
-    if (m_currentSlide < ui->slidesStackedWidget->count() - 1)
-        ui->slidesStackedWidget->setCurrentIndex(++m_currentSlide);
+    if (_currentSlide < ui->slidesStackedWidget->count() - 1)
+        ui->slidesStackedWidget->setCurrentIndex(++_currentSlide);
 }
 
 void MainWindow::on_toolButton_prev_clicked()
 {
-    if (m_currentSlide > 0)
-        ui->slidesStackedWidget->setCurrentIndex(--m_currentSlide);
+    if (_currentSlide > 0)
+        ui->slidesStackedWidget->setCurrentIndex(--_currentSlide);
 }
 
 /* * * * * must modify

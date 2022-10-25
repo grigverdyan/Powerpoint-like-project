@@ -13,8 +13,8 @@ public:
     virtual ~Slide();
 
 private:
-    QVector<Shape *> m_shapesVector;
-    int m_shapesCount;
+    QVector<Shape *> _shapesVector;
+    int _shapesCount;
 };
 
 #endif // SLIDE_HPP

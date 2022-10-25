@@ -16,8 +16,8 @@ public:
     void addSlideInSlideManager();
 
 private:
-    QVector<Slide *> m_slidesVector;
-    int m_slidesCount;
+    QVector<Slide *> _slidesVector;
+    unsigned int _slidesCount;
 };
 
 #endif // SLIDESMANAGER_HPP
