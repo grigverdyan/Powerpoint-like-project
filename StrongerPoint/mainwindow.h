@@ -8,6 +8,7 @@
 #include <QDebug>
 
 #include "slide.h"
+#include "console_input.h"
 
 class MainWindow : public QMainWindow
 {
@@ -27,6 +28,7 @@ private:
     QVBoxLayout     workLayout_;
 
     QLineEdit       commandBar_;
+    ConsoleInput    input_;
 
     Slide           slide_;
 };
