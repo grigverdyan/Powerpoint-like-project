@@ -1,7 +1,7 @@
 #ifndef PROPERTIES_HPP
 #define PROPERTIES_HPP
 
-enum Properties
+enum class Properties
 {
     MainHWin = 1500,
     MainVWin = 800

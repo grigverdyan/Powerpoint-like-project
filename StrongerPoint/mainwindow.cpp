@@ -4,7 +4,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), slide_()
 {
-    this->setFixedSize(MainHWin, MainVWin);
+    this->setFixedSize((int)Properties::MainHWin, (int)Properties::MainVWin);
 
 
     workLayout_.addWidget(&slide_);
